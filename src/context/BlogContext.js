@@ -3,7 +3,7 @@ import createDataContext from "./createDataContext";
 // state can be anything like blogPost or any value but by convention we usually name it state
 const blogReducer = (state, action) => {
   switch (action.type) {
-    case 'delete_blogPost':
+    case 'delete_blogP†ost':
       return state.filter((blogPost) => blogPost.id !== action.payload)
     case "add_blogPost":
       return [
