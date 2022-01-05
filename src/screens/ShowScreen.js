@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Context} from '../context/BlogContext'
+import { FontAwesome } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 const ShowScreen = ({navigation}) => {
@@ -14,7 +16,15 @@ const ShowScreen = ({navigation}) => {
         </View>
     )
 }
-
+ShowScreen.navigationOptions = ({navigation}) => {
+    return {
+        headerRight: (
+        <TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+            <FontAwesome name="pencil" size={30} color="black" />
+        </TouchableOpacity>
+        )
+    }
+}
 const styles = StyleSheet.create({})
 
 export default ShowScreen;
